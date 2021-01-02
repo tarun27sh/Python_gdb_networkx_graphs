@@ -1,1211 +1,1216 @@
-Breakpoint 1 at 0x400694: file test/test.c, line 31.
+Breakpoint 1 at 0x40082e: file test/test.c, line 37.
 void func1(void);
-Breakpoint 2 at 0x400679: file test/test.c, line 28.
+Breakpoint 2 at 0x400808: file test/test.c, line 34.
 void func2(void);
-Breakpoint 3 at 0x40065b: file test/test.c, line 26.
+Breakpoint 3 at 0x4007e5: file test/test.c, line 32.
 void func2_1(int, int);
-Breakpoint 4 at 0x400631: file test/test.c, line 22.
+Breakpoint 4 at 0x4007ac: file test/test.c, line 28.
 void func3(void);
-Breakpoint 5 at 0x400620: file test/test.c, line 20.
+Breakpoint 5 at 0x400798: file test/test.c, line 26.
 void func3_1(int, int, int);
-Breakpoint 6 at 0x400607: file test/test.c, line 19.
+Breakpoint 6 at 0x40077f: file test/test.c, line 25.
 void func4(void);
-Breakpoint 7 at 0x4005f1: file test/test.c, line 15.
+Breakpoint 7 at 0x400769: file test/test.c, line 21.
 void func5(void);
-Breakpoint 8 at 0x4005d4: file test/test.c, line 13.
+Breakpoint 8 at 0x40074c: file test/test.c, line 19.
 void func5_1(const char *);
-Breakpoint 9 at 0x4005c0: file test/test.c, line 11.
+Breakpoint 9 at 0x400738: file test/test.c, line 17.
 void func6(void);
-Breakpoint 10 at 0x4005b4: file test/test.c, line 9.
+Breakpoint 10 at 0x4006f8: file test/test.c, line 11.
 void func7(void);
-Breakpoint 11 at 0x400594: file test/test.c, line 8.
+Breakpoint 11 at 0x4006d4: file test/test.c, line 10.
 void func7_1(_Bool, int *);
-Breakpoint 12 at 0x40057b: file test/test.c, line 6.
+Breakpoint 12 at 0x4006bb: file test/test.c, line 8.
 void func8(void);
-Breakpoint 13 at 0x4006a0: file test/test.c, line 34.
+Breakpoint 13 at 0x40083e: file test/test.c, line 40.
 int main();
-Breakpoint 14 at 0x40056a: file test/test.c, line 5.
+Breakpoint 14 at 0x4006aa: file test/test.c, line 7.
 static void func9(void);
-Undefined command: "commmand".  Try "help".
 Type commands for breakpoint(s) 1-14, one per line.
 End with a line saying just "end".
 Starting program: /home/vagrant/dwnlds/gdb_graphs/a.out 
 
-Breakpoint 13, main () at test/test.c:34
-34		func1();
-#0  main () at test/test.c:34
+Breakpoint 13, main () at test/test.c:40
+40	    srand(time(NULL));
+#0  main () at test/test.c:40
 
-Breakpoint 1, func1 () at test/test.c:31
-31	void func1(void) { func2(); }
-#0  func1 () at test/test.c:31
-#1  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:28
-28	    func2_1(2,3);
-#0  func2 () at test/test.c:28
-#1  0x0000000000400699 in func1 () at test/test.c:31
-#2  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=2, b=3) at test/test.c:26
-26	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=2, b=3) at test/test.c:26
-#1  0x0000000000400688 in func2 () at test/test.c:28
-#2  0x0000000000400699 in func1 () at test/test.c:31
-#3  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 3, func2_1 (a=1796246645, b=705937918) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=1796246645, b=705937918) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:22
-22	    func3_1(4,5,6);
-#0  func3 () at test/test.c:22
-#1  0x000000000040068d in func2 () at test/test.c:29
-#2  0x0000000000400699 in func1 () at test/test.c:31
-#3  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=4, b=5, c=6) at test/test.c:20
-20	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=4, b=5, c=6) at test/test.c:20
-#1  0x0000000000400645 in func3 () at test/test.c:22
-#2  0x000000000040068d in func2 () at test/test.c:29
-#3  0x0000000000400699 in func1 () at test/test.c:31
-#4  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 5, func3_1 (a=568181008, b=705244625, c=938498745) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=568181008, b=705244625, c=938498745) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:19
-19	void func4(void) { func5(); }
-#0  func4 () at test/test.c:19
-#1  0x000000000040064a in func3 () at test/test.c:23
-#2  0x000000000040068d in func2 () at test/test.c:29
-#3  0x0000000000400699 in func1 () at test/test.c:31
-#4  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:15
-15	    func5_1("graph me\n");
-#0  func5 () at test/test.c:15
-#1  0x000000000040060c in func4 () at test/test.c:19
-#2  0x000000000040064a in func3 () at test/test.c:23
-#3  0x000000000040068d in func2 () at test/test.c:29
-#4  0x0000000000400699 in func1 () at test/test.c:31
-#5  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40075e "graph me\n") at test/test.c:13
-13	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40075e "graph me\n") at test/test.c:13
-#1  0x00000000004005fb in func5 () at test/test.c:15
-#2  0x000000000040060c in func4 () at test/test.c:19
-#3  0x000000000040064a in func3 () at test/test.c:23
-#4  0x000000000040068d in func2 () at test/test.c:29
-#5  0x0000000000400699 in func1 () at test/test.c:31
-#6  0x00000000004006a5 in main () at test/test.c:34
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:11
-11	void func6(void) { func7(); }
-#0  func6 () at test/test.c:11
-#1  0x0000000000400600 in func5 () at test/test.c:16
-#2  0x000000000040060c in func4 () at test/test.c:19
-#3  0x000000000040064a in func3 () at test/test.c:23
-#4  0x000000000040068d in func2 () at test/test.c:29
-#5  0x0000000000400699 in func1 () at test/test.c:31
-#6  0x00000000004006a5 in main () at test/test.c:34
-
-Breakpoint 10, func7 () at test/test.c:9
-9	void func7(void) { func8(); }
-#0  func7 () at test/test.c:9
-#1  0x00000000004005c5 in func6 () at test/test.c:11
-#2  0x0000000000400600 in func5 () at test/test.c:16
-#3  0x000000000040060c in func4 () at test/test.c:19
-#4  0x000000000040064a in func3 () at test/test.c:23
-#5  0x000000000040068d in func2 () at test/test.c:29
-#6  0x0000000000400699 in func1 () at test/test.c:31
-#7  0x00000000004006a5 in main () at test/test.c:34
-
-Breakpoint 12, func8 () at test/test.c:6
-6	void func8(void) { func9(); }
-#0  func8 () at test/test.c:6
-#1  0x00000000004005b9 in func7 () at test/test.c:9
-#2  0x00000000004005c5 in func6 () at test/test.c:11
-#3  0x0000000000400600 in func5 () at test/test.c:16
-#4  0x000000000040060c in func4 () at test/test.c:19
-#5  0x000000000040064a in func3 () at test/test.c:23
-#6  0x000000000040068d in func2 () at test/test.c:29
-#7  0x0000000000400699 in func1 () at test/test.c:31
-#8  0x00000000004006a5 in main () at test/test.c:34
-
-Breakpoint 14, func9 () at test/test.c:5
-5	static void func9(void) { printf("leaf\n"); }
-#0  func9 () at test/test.c:5
-#1  0x0000000000400580 in func8 () at test/test.c:6
-#2  0x00000000004005b9 in func7 () at test/test.c:9
-#3  0x00000000004005c5 in func6 () at test/test.c:11
-#4  0x0000000000400600 in func5 () at test/test.c:16
-#5  0x000000000040060c in func4 () at test/test.c:19
-#6  0x000000000040064a in func3 () at test/test.c:23
-#7  0x000000000040068d in func2 () at test/test.c:29
-#8  0x0000000000400699 in func1 () at test/test.c:31
-#9  0x00000000004006a5 in main () at test/test.c:34
-[Inferior 1 (process 4026) exited normally]
-Type commands for breakpoint(s) 1-14, one per line.
-End with a line saying just "end".
-Starting program: /home/vagrant/dwnlds/gdb_graphs/a.out 
-
-Breakpoint 13, main () at test/test.c:36
-36	    srand(time(NULL));
-#0  main () at test/test.c:36
-
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 3, func2_1 (a=64903008, b=1655318129) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=64903008, b=1655318129) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 5, func3_1 (a=647326891, b=516888841, c=309091605) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=647326891, b=516888841, c=309091605) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
-
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=309912403, b=982102332) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=309912403, b=982102332) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=368983417, b=813483458) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=368983417, b=813483458) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=602162461, b=1550781759, c=264258245) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=602162461, b=1550781759, c=264258245) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=719987978, b=405660500, c=58792732) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=719987978, b=405660500, c=58792732) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=683205720, b=585163132) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=683205720, b=585163132) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=345065819, b=929385511) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=345065819, b=929385511) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=1388674212, b=1693508820, c=1165666801) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=1388674212, b=1693508820, c=1165666801) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=431493764, b=1375210557, c=893716268) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=431493764, b=1375210557, c=893716268) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=1607039723, b=1297648060) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=1607039723, b=1297648060) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=1199872575, b=1244839404) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=1199872575, b=1244839404) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=1459920800, b=776951668, c=968696510) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=1459920800, b=776951668, c=968696510) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=932763002, b=545088261, c=2134301022) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=932763002, b=545088261, c=2134301022) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=1165414068, b=271218066) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=1165414068, b=271218066) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=187592607, b=2111253151) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=187592607, b=2111253151) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=2075570528, b=1303378661, c=441929303) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=2075570528, b=1303378661, c=441929303) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=1503879249, b=161890257, c=1492177017) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=1503879249, b=161890257, c=1492177017) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=1545851938, b=1649688617) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=1545851938, b=1649688617) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=538196837, b=678638361) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=538196837, b=678638361) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=1101898518, b=198284445, c=1709144403) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=1101898518, b=198284445, c=1709144403) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=2131991065, b=488300523, c=788802277) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=2131991065, b=488300523, c=788802277) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=1853602575, b=265924819) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=1853602575, b=265924819) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=1194238441, b=836180103) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=1194238441, b=836180103) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=223007768, b=575016424, c=1166801526) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=223007768, b=575016424, c=1166801526) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=1899483066, b=1774678849, c=1780754063) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=1899483066, b=1774678849, c=1780754063) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=1557118756, b=1814128417) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=1557118756, b=1814128417) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=440678659, b=201451423) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=440678659, b=201451423) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=960416868, b=2078386663, c=532920172) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=960416868, b=2078386663, c=532920172) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=846339160, b=260244155, c=120982836) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=846339160, b=260244155, c=120982836) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=516066147, b=1135082633) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=516066147, b=1135082633) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=1189629667, b=840970814) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=1189629667, b=840970814) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=62091320, b=153265786, c=1643622588) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=62091320, b=153265786, c=1643622588) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=417356576, b=1734687082, c=1191404979) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=417356576, b=1734687082, c=1191404979) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 1, func1 () at test/test.c:33
-33	void func1(void) { func2(); }
-#0  func1 () at test/test.c:33
-#1  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 1, func1 () at test/test.c:37
+37	void func1(void) { func2(); }
+#0  func1 () at test/test.c:37
+#1  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 2, func2 () at test/test.c:30
-30	    func2_1(rand(),rand());
-#0  func2 () at test/test.c:30
-#1  0x000000000040078b in func1 () at test/test.c:33
-#2  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 2, func2 () at test/test.c:34
+34	    func2_1(rand(),rand());
+#0  func2 () at test/test.c:34
+#1  0x0000000000400833 in func1 () at test/test.c:37
+#2  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 3, func2_1 (a=1450913846, b=884813152) at test/test.c:28
-28	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
-#0  func2_1 (a=1450913846, b=884813152) at test/test.c:28
-#1  0x0000000000400775 in func2 () at test/test.c:30
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 3, func2_1 (a=832042838, b=1622898743) at test/test.c:32
+32	void func2_1(int a, int b) { printf("leaf (%d, %d)\n", a, b);}
+#0  func2_1 (a=832042838, b=1622898743) at test/test.c:32
+#1  0x000000000040081d in func2 () at test/test.c:34
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 4, func3 () at test/test.c:24
-24	    func3_1(rand(), rand(), rand());
-#0  func3 () at test/test.c:24
-#1  0x000000000040077a in func2 () at test/test.c:31
-#2  0x000000000040078b in func1 () at test/test.c:33
-#3  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 4, func3 () at test/test.c:28
+28	    func3_1(rand(), rand(), rand());
+#0  func3 () at test/test.c:28
+#1  0x0000000000400822 in func2 () at test/test.c:35
+#2  0x0000000000400833 in func1 () at test/test.c:37
+#3  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 5, func3_1 (a=80381866, b=1853509662, c=1669131043) at test/test.c:22
-22	void func3_1(int a, int b, int c) { printf("leaf\n"); }
-#0  func3_1 (a=80381866, b=1853509662, c=1669131043) at test/test.c:22
-#1  0x0000000000400724 in func3 () at test/test.c:24
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 5, func3_1 (a=1377131099, b=1609716117, c=1617229151) at test/test.c:26
+26	void func3_1(int a, int b, int c) { printf("leaf\n"); }
+#0  func3_1 (a=1377131099, b=1609716117, c=1617229151) at test/test.c:26
+#1  0x00000000004007cc in func3 () at test/test.c:28
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 6, func4 () at test/test.c:21
-21	void func4(void) { func5(); }
-#0  func4 () at test/test.c:21
-#1  0x0000000000400729 in func3 () at test/test.c:25
-#2  0x000000000040077a in func2 () at test/test.c:31
-#3  0x000000000040078b in func1 () at test/test.c:33
-#4  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 6, func4 () at test/test.c:25
+25	void func4(void) { func5(); }
+#0  func4 () at test/test.c:25
+#1  0x00000000004007d1 in func3 () at test/test.c:29
+#2  0x0000000000400822 in func2 () at test/test.c:35
+#3  0x0000000000400833 in func1 () at test/test.c:37
+#4  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 7, func5 () at test/test.c:17
-17	    func5_1("graph me\n");
-#0  func5 () at test/test.c:17
-#1  0x00000000004006dc in func4 () at test/test.c:21
-#2  0x0000000000400729 in func3 () at test/test.c:25
-#3  0x000000000040077a in func2 () at test/test.c:31
-#4  0x000000000040078b in func1 () at test/test.c:33
-#5  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 7, func5 () at test/test.c:21
+21	    func5_1("graph me\n");
+#0  func5 () at test/test.c:21
+#1  0x0000000000400784 in func4 () at test/test.c:25
+#2  0x00000000004007d1 in func3 () at test/test.c:29
+#3  0x0000000000400822 in func2 () at test/test.c:35
+#4  0x0000000000400833 in func1 () at test/test.c:37
+#5  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 8, func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-15	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
-#0  func5_1 (str=0x40087e "graph me\n") at test/test.c:15
-#1  0x00000000004006cb in func5 () at test/test.c:17
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 8, func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+19	void func5_1(const char* str) { printf("leaf (%s)\n", str); }
+#0  func5_1 (str=0x40091e "graph me\n") at test/test.c:19
+#1  0x0000000000400773 in func5 () at test/test.c:21
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
-Breakpoint 9, func6 () at test/test.c:13
-13	void func6(void) { func7(); }
-#0  func6 () at test/test.c:13
-#1  0x00000000004006d0 in func5 () at test/test.c:18
-#2  0x00000000004006dc in func4 () at test/test.c:21
-#3  0x0000000000400729 in func3 () at test/test.c:25
-#4  0x000000000040077a in func2 () at test/test.c:31
-#5  0x000000000040078b in func1 () at test/test.c:33
-#6  0x00000000004007b5 in main () at test/test.c:38
+Breakpoint 9, func6 () at test/test.c:17
+17	void func6(void) { func7(); }
+#0  func6 () at test/test.c:17
+#1  0x0000000000400778 in func5 () at test/test.c:22
+#2  0x0000000000400784 in func4 () at test/test.c:25
+#3  0x00000000004007d1 in func3 () at test/test.c:29
+#4  0x0000000000400822 in func2 () at test/test.c:35
+#5  0x0000000000400833 in func1 () at test/test.c:37
+#6  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 10, func7 () at test/test.c:11
-11	void func7(void) { func8(); }
+11	void func7(void) { 
 #0  func7 () at test/test.c:11
-#1  0x0000000000400695 in func6 () at test/test.c:13
-#2  0x00000000004006d0 in func5 () at test/test.c:18
-#3  0x00000000004006dc in func4 () at test/test.c:21
-#4  0x0000000000400729 in func3 () at test/test.c:25
-#5  0x000000000040077a in func2 () at test/test.c:31
-#6  0x000000000040078b in func1 () at test/test.c:33
-#7  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040073d in func6 () at test/test.c:17
+#2  0x0000000000400778 in func5 () at test/test.c:22
+#3  0x0000000000400784 in func4 () at test/test.c:25
+#4  0x00000000004007d1 in func3 () at test/test.c:29
+#5  0x0000000000400822 in func2 () at test/test.c:35
+#6  0x0000000000400833 in func1 () at test/test.c:37
+#7  0x000000000040085d in main () at test/test.c:42
+
+Breakpoint 11, func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+10	void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
+#0  func7_1 (is_true=false, p=0x7fffffffe794) at test/test.c:10
+#1  0x0000000000400718 in func7 () at test/test.c:13
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 12, func8 () at test/test.c:8
 8	void func8(void) { func9(); }
 #0  func8 () at test/test.c:8
-#1  0x0000000000400689 in func7 () at test/test.c:11
-#2  0x0000000000400695 in func6 () at test/test.c:13
-#3  0x00000000004006d0 in func5 () at test/test.c:18
-#4  0x00000000004006dc in func4 () at test/test.c:21
-#5  0x0000000000400729 in func3 () at test/test.c:25
-#6  0x000000000040077a in func2 () at test/test.c:31
-#7  0x000000000040078b in func1 () at test/test.c:33
-#8  0x00000000004007b5 in main () at test/test.c:38
+#1  0x000000000040071d in func7 () at test/test.c:14
+#2  0x000000000040073d in func6 () at test/test.c:17
+#3  0x0000000000400778 in func5 () at test/test.c:22
+#4  0x0000000000400784 in func4 () at test/test.c:25
+#5  0x00000000004007d1 in func3 () at test/test.c:29
+#6  0x0000000000400822 in func2 () at test/test.c:35
+#7  0x0000000000400833 in func1 () at test/test.c:37
+#8  0x000000000040085d in main () at test/test.c:42
 
 Breakpoint 14, func9 () at test/test.c:7
 7	static void func9(void) { printf("leaf\n"); }
 #0  func9 () at test/test.c:7
-#1  0x0000000000400650 in func8 () at test/test.c:8
-#2  0x0000000000400689 in func7 () at test/test.c:11
-#3  0x0000000000400695 in func6 () at test/test.c:13
-#4  0x00000000004006d0 in func5 () at test/test.c:18
-#5  0x00000000004006dc in func4 () at test/test.c:21
-#6  0x0000000000400729 in func3 () at test/test.c:25
-#7  0x000000000040077a in func2 () at test/test.c:31
-#8  0x000000000040078b in func1 () at test/test.c:33
-#9  0x00000000004007b5 in main () at test/test.c:38
-[Inferior 1 (process 5170) exited normally]
+#1  0x00000000004006c0 in func8 () at test/test.c:8
+#2  0x000000000040071d in func7 () at test/test.c:14
+#3  0x000000000040073d in func6 () at test/test.c:17
+#4  0x0000000000400778 in func5 () at test/test.c:22
+#5  0x0000000000400784 in func4 () at test/test.c:25
+#6  0x00000000004007d1 in func3 () at test/test.c:29
+#7  0x0000000000400822 in func2 () at test/test.c:35
+#8  0x0000000000400833 in func1 () at test/test.c:37
+#9  0x000000000040085d in main () at test/test.c:42
+[Inferior 1 (process 16015) exited normally]

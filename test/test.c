@@ -8,7 +8,11 @@ static void func9(void) { printf("leaf\n"); }
 void func8(void) { func9(); }
 
 void func7_1(bool is_true, int *p) { printf("leaf (is_true=%d, ptr=%p\n", is_true, p); }
-void func7(void) { func8(); }
+void func7(void) { 
+    int a;
+    func7_1(false, &a);
+    func8(); 
+}
 
 void func6(void) { func7(); }
 
